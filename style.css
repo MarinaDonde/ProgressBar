@@ -1,5 +1,6 @@
 :root {
   --neon: #03e9f4;
+  /* --neon: #ccff33; */
   /* --neon: #ff6ec7; */
   /* --neon: #4d4dff; */
   --background: #121213;
@@ -17,35 +18,116 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: 100vh;
   background: var(--background);
 }
 
-.loader {
+.button-load {
   position: relative;
   width: 400px;
   height: 50px;
-  background: var(--loaderBg);
+  border: 2px solid var(--loaderBg);
+  background: var(--background);
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   overflow: hidden;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+  cursor: pointer;
 }
 
-.loader:hover {
+.button-load:hover {
   background: var(--neon);
-  color: #050801;
+  color: var(--loaderHover);
+  transition: 0.8s;
   box-shadow: 0 0 5px var(--neon), 0 0 25px var(--neon), 0 0 50px var(--neon),
     0 0 200px var(--neon);
 }
 
-.loader span {
+.button-load h3 {
+  font-family: consolas;
+  color: var(--neon);
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  border-right: 1px solid var(--neon);
+  animation: typing 7s steps(16) infinite;
+  white-space: nowrap;
+}
+
+.button-load:hover h3 {
+  color: var(--loaderHover);
+  border-right: 1px solid var(--loaderHover);
+}
+
+@keyframes typing {
+  0%,
+  90%,
+  100% {
+    width: 0px;
+  }
+  30%,
+  60% {
+    width: 197.59px;
+  }
+}
+
+.loader {
+  display: none;
+  position: relative;
+  padding: 2px;
+  width: 400px;
+  height: 50px;
+  border: 2px solid var(--loaderBg);
+  overflow: hidden;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+  animation: shadow 8s forwards cubic-bezier(0, 0, 0, 0);
+}
+
+.line-loader {
+  background: var(--neon);
+  height: 100%;
+  width: 100%;
+  animation: loading 8s forwards cubic-bezier(0, 0, 0, 0);
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0 0 5px var(--neon);
+  }
+  25% {
+    box-shadow: 0 0 40px var(--neon);
+  }
+  50% {
+    box-shadow: 0 0 90px var(--neon);
+  }
+  75% {
+    box-shadow: 0 0 140px var(--neon);
+  }
+  100% {
+    box-shadow: 0 0 200px var(--neon);
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.line-loader span,
+.button-load span {
   position: absolute;
   display: block;
 }
 
-.loader span:nth-child(1) {
+.line-loader span:nth-child(1),
+.button-load span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -65,7 +147,8 @@ body {
   }
 }
 
-.loader span:nth-child(3) {
+.loader span:nth-child(3),
+.button-load span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -85,7 +168,8 @@ body {
   }
 }
 
-.loader span:nth-child(2) {
+.loader span:nth-child(2),
+.button-load span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 3px;
@@ -105,7 +189,8 @@ body {
   }
 }
 
-.loader span:nth-child(4) {
+.loader span:nth-child(4),
+.button-load span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 3px;
@@ -122,32 +207,5 @@ body {
   50%,
   100% {
     bottom: 100%;
-  }
-}
-
-.loader h3 {
-  font-family: consolas;
-  color: var(--neon);
-  overflow: hidden;
-  letter-spacing: 2px;
-  transition: 0.5s;
-  border-right: 1px solid var(--neon);
-  animation: typing 5s steps(10) infinite;
-}
-
-.loader:hover h3 {
-  color: var(--loaderHover);
-  border-right: 1px solid var(--loaderHover);
-}
-
-@keyframes typing {
-  0%,
-  90%,
-  100% {
-    width: 0px;
-  }
-  30%,
-  60% {
-    width: 123.89px;
   }
 }
