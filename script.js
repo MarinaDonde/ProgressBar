@@ -1,6 +1,6 @@
 function toggleLoader() {
-  var button = document.querySelector(".button-load");
-  var loader = document.querySelector(".loader");
+  const button = document.querySelector(".button-load");
+  const loader = document.querySelector(".loader");
 
   button.style.display = "none";
   loader.style.display = "block";
