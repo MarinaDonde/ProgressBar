@@ -16,11 +16,11 @@ A aplicação possui um botão que ao ser clicado mostra um progress bar. Todas 
 
 ### 🔹 Button:
 
-[Imgur](https://imgur.com/2pLe1lW)
+(https://imgur.com/2pLe1lW)
 
 ### 🔹 Progress Bar:
 
-[Imgur](https://imgur.com/RwMdw4b)
+(https://imgur.com/RwMdw4b)
 
 ## 🔹 Desenvolvido com 💙 por:
 
