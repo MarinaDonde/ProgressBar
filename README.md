@@ -25,3 +25,4 @@ A aplicação possui um botão que ao ser clicado mostra um progress bar. Todas 
 ## 🔹 Desenvolvido com 💙 por:
 
 Marina Dondé
+[![Blog](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/marina-dond%C3%A9-72a649217/)
